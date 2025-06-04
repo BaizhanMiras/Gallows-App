@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  box-sizing: border-box;
+}
+body{
+  padding: 40px;
+  background-color: #eee;
+}
+.start-game{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  row-gap: 6rem;
+}
+.start-game span{
+  color: red;
+}
+.start-game h1{
+  font-size: 128px;
+}
+.start-game button{
+  padding: 1rem;
+  font-size: 5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #77ccff;
+  border: none;
+  outline: none;
+  box-shadow: 0 10px 20px rgba(0, 0, 255, 0.2);
+}
+.start-game button:hover{
+  border-radius: 100px;
+  transition: 0.3s;
+  font-size: 6rem;
+}
+.container{
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+}
+.container img{
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 20px 20px rgba(255, 255, 255, 1);
+}
+.container #letters button{
+  font-size: 2rem;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+.container #letters button:hover{
+  color: #77ccff;
+}
+#hintBtn{
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid black;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1.5rem;
+  background-color: #77ccff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+#wordBox{
+  font-size: 2.5rem;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+}
+#wordBox p{
+  position: relative;
+  font-family: monospace;
+  margin-inline: 5px;
+  user-select: none;
+  color: transparent;
+}
+
+#wordBox p::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: red;
+}
+#hint{
+  display: none;
+}
+#letters button{
+  position: relative;
+  padding-inline: 5px;
+  transition: 0.1s;
+}
+.container #letters button:disabled{
+  cursor: default;
+  color: gray;
+}
+button:disabled::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(images/letter-x.png);
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
